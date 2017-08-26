@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">KioskTest</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_faculty">Faculty</string>
+    <string name="title_activity_lab">LabActivity</string>
+    <string name="pg_lab">PG Lab</string>
+    <string name="cts_lab">Amrita Cognizant Lab</string>
+    <string name="ctl_lab">Computational Thinking lab</string>
+    <string name="wlan_lab">Mobile and Wireless Lab</string>
+    <string name="amuda"> Multi Dimensional Data Analytics Lab</string>
+
+    <string-array name="labs_array">
+        <item>@string/amuda</item>
+        <item>@string/ctl_lab</item>
+        <item>@string/cts_lab</item>
+        <item>@string/pg_lab</item>
+        <item>@string/wlan_lab</item>
+
+    </string-array>
+    <string name="title_activity_class">classActivity</string>
+    <string name="title_activity_nav">navActivity</string>
+    <string name="title_activity_about">aboutActivity</string>
+    <string name="title_activity_hjghfhfhfhgfhfgghf">hjghfhfhfh</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_faculty_profile">faculty_profile</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+</resources>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.saiteja.kiosktest.MainActivity">
+
+
+
+        <Button
+            android:id="@+id/button_classes"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="109dp"
+            android:layout_height="81dp"
+            android:layout_marginLeft="72dp"
+            android:layout_marginTop="178dp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="Classes"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_constraintBaseline_creator="1"
+            tools:layout_constraintLeft_creator="1" />
+
+        <Button
+            android:id="@+id/button_labs"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="109dp"
+            android:layout_height="81dp"
+            android:layout_marginLeft="72dp"
+            android:layout_marginTop="97dp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="Labs"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_constraintBaseline_creator="1"
+            tools:layout_constraintLeft_creator="1" />
+
+        <Button
+            android:id="@+id/button_faculty"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="103dp"
+            android:layout_height="79dp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:onClick="faculty_click"
+            android:text="Faculty"
+            tools:layout_editor_absoluteY="7dp"
+            tools:layout_editor_absoluteX="87dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignEnd="@+id/button_labs"
+            android:layout_marginTop="22dp" />
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:menu="@menu/navigation" />
+</LinearLayout>
+
+
+
+
+
+</RelativeLayout>
+
+
