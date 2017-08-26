@@ -29,26 +29,31 @@ public class classActivity extends AppCompatActivity {
                 case R.id.navigation_home:
                     i = new Intent(getBaseContext(), MainActivity.class);
                     startActivity(i);
+
                     overridePendingTransition(0, 0);
                     return true;
                 case R.id.navigation_classes:
                     i =new Intent(getBaseContext(), classActivity.class);
                     startActivity(i);
+
                     overridePendingTransition(0, 0);
                     return true;
                 case R.id.navigation_navigation:
                     i =new Intent(getBaseContext(), navActivity.class);
                     startActivity(i);
+
                     overridePendingTransition(0, 0);
                     return true;
                 case R.id.navigation_faculty:
                     i =new Intent(getBaseContext(), facultyActivity.class);
                     startActivity(i);
+
                     overridePendingTransition(0, 0);
                     return true;
                 case R.id.navigation_labs:
                     i =new Intent(getBaseContext(), LabActivity.class);
                     startActivity(i);
+
                     overridePendingTransition(0, 0);
                     return true;
               /*  case R.id.navigation_about:
@@ -62,6 +67,10 @@ public class classActivity extends AppCompatActivity {
 
     };
 
+    BottomNavigationView navigation;
+    Menu menu;
+    MenuItem menuItem;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,13 +78,13 @@ public class classActivity extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_class);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation = (BottomNavigationView) findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableShiftMode(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
 
-        Menu menu = navigation.getMenu();
-        MenuItem menuItem = menu.getItem(3);
+        menu = navigation.getMenu();
+        menuItem = menu.getItem(3);
         menuItem.setChecked(true);
 
         mSectionsStatePagerAdapter = new fragmentstateadapter(getSupportFragmentManager());
@@ -113,6 +122,7 @@ public class classActivity extends AppCompatActivity {
 
     }
 
+
     private  void setupViewPager(ViewPager viewpager){
 
         fragmentstateadapter mfragmentstateadapter = new fragmentstateadapter(getSupportFragmentManager());
@@ -123,6 +133,15 @@ public class classActivity extends AppCompatActivity {
     }
     public void setViewPager(int fragmentNumber){
         mViewPager.setCurrentItem(fragmentNumber);
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        menuItem = menu.getItem(3);
+        menuItem.setChecked(true);
+
     }
 
 }

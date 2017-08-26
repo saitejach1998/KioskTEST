@@ -78,17 +78,26 @@ public class facultyActivity extends AppCompatActivity {
         }
 
     };
+    BottomNavigationView navigation;
+    Menu menu;
+    MenuItem menuItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_faculty);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation = (BottomNavigationView) findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableShiftMode(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        Menu menu = navigation.getMenu();
-        MenuItem menuItem = menu.getItem(1);
+        menu = navigation.getMenu();
+        menuItem = menu.getItem(1);
         menuItem.setChecked(true);
     }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        menuItem = menu.getItem(1);
+        menuItem.setChecked(true);
 
+    }
 }

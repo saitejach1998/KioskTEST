@@ -25,22 +25,30 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.navigation_home:
                       i = new Intent(MainActivity.this, MainActivity.class);
                         startActivity(i);
+                        overridePendingTransition(0, 0);
                         return true;
+
+
                     case R.id.navigation_classes:
                          i =new Intent(MainActivity.this, classActivity.class);
                         startActivity(i);
+                        overridePendingTransition(0, 0);
                         return true;
                     case R.id.navigation_navigation:
                         i =new Intent(MainActivity.this, navActivity.class);
                         startActivity(i);
+                        overridePendingTransition(0, 0);
+
                         return true;
                     case R.id.navigation_faculty:
                         i =new Intent(MainActivity.this, facultyActivity.class);
                         startActivity(i);
+                        overridePendingTransition(0, 0);
                         return true;
                     case R.id.navigation_labs:
                         i =new Intent(MainActivity.this, LabActivity.class);
                         startActivity(i);
+                        overridePendingTransition(0, 0);
                         return true;
                    /* case R.id.navigation_about:
                         i =new Intent(MainActivity.this, aboutActivity.class);
@@ -52,58 +60,22 @@ public class MainActivity extends AppCompatActivity {
             }
 
         };
+    BottomNavigationView navigation;
+    Menu menu;
+    MenuItem menuItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+
+        //
+        navigation = (BottomNavigationView) findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableShiftMode(navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        Menu menu = navigation.getMenu();
-        MenuItem menuItem = menu.getItem(0);
+        menu = navigation.getMenu();
+        menuItem = menu.getItem(0);
         menuItem.setChecked(true);
-        navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                Intent i;
-                switch (item.getItemId()) {
-                    case R.id.navigation_home:
-                        i = new Intent(getBaseContext(), MainActivity.class);
-                        startActivity(i);
-                        overridePendingTransition(0, 0);
-                        break;
-                    case R.id.navigation_classes:
-                        i =new Intent(MainActivity.this, classActivity.class);
-                        startActivity(i);
-                        overridePendingTransition(0, 0);
-                        break;
-                    case R.id.navigation_navigation:
-                        i =new Intent(MainActivity.this, navActivity.class);
-                        startActivity(i);
-                        overridePendingTransition(0, 0);
-                        break;
-                    case R.id.navigation_faculty:
-                        i =new Intent(MainActivity.this, facultyActivity.class);
-                        startActivity(i);
-                        overridePendingTransition(0, 0);
-                        break;
-                    case R.id.navigation_labs:
-                        i =new Intent(MainActivity.this, LabActivity.class);
-                        startActivity(i);
-                        overridePendingTransition(0, 0);
-                        break;
-                   /* case R.id.navigation_about:
-                        i =new Intent(MainActivity.this, aboutActivity.class);
-                        startActivity(i);
-                        return true;
-*/
-                }
-                return false;
-            }
-        });
-        //faculty button
 
 
 
@@ -140,6 +112,16 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        menuItem = menu.getItem(0);
+        menuItem.setChecked(true);
 
     }
 
